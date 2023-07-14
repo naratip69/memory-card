@@ -1,39 +1,30 @@
 import React, { useState, useEffect } from "react";
 
 const Card = (props) => {
-  const [isClick, setClick] = useState(false);
-  const {
-    name,
-    src,
-    isGameOver,
-    setGameOver,
-    score,
-    setScore,
-    isShuffle,
-    setShuffle,
-  } = props;
+  const { name, src, setGameOver, setShuffle, id, setClick, click } = props;
 
   onclick = (e) => {
-    e.stopPropagation();
     e.preventDefault();
-    console.log(isClick);
+    e.stopPropagation();
+    console.log(id);
     console.log(name);
-    //setShuffle(true);
-    if (!isClick) {
+    setShuffle(true);
+    if (!click[id]) {
       console.log("update score");
-      setClick(true);
-      setScore(score + 1);
-      return;
     } else {
       console.log("game over");
-      setClick(false);
-      setGameOver(true);
+      setGameOver();
     }
+    setClick(id);
   };
 
   return (
-    <div className="card" onClick={onclick}>
-      <img src={src} />
+    <div
+      className="card"
+      onClick={onclick}
+      style={{ width: "300px", height: "400px" }}
+    >
+      <img src={src} style={{ width: "300px", height: "380px" }} />
       <h5>{name}</h5>
     </div>
   );
