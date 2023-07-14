@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from "react";
 
 export default function Card(props) {
-  const { name, src, isGameOver, setGameOver, score, setScore } = props;
+  const {
+    name,
+    src,
+    isGameOver,
+    setGameOver,
+    score,
+    setScore,
+    isShuffle,
+    setShuffle,
+  } = props;
   const [isClick, setClick] = useState(false);
 
   onclick = (e) => {
+    setShuffle(!isShuffle);
     if (!isClick) {
       console.log("update score");
       setClick(true);

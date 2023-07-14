@@ -5,7 +5,8 @@ export default function Game() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [isGameOver, setGameOver] = useState(false);
-  const [cards, setcards] = useState([
+  const [isShuffle, setShuffle] = useState(true);
+  const [cards, setCards] = useState([
     <Card
       name="Deer"
       isGameOver={isGameOver}
@@ -13,6 +14,8 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1484406566174-9da000fda645?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YW5pbWFsfGVufDB8MXwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
     <Card
       name="Parrot"
@@ -21,6 +24,8 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1555169062-013468b47731?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5pbWFsfGVufDB8MXwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
     <Card
       name="Tiger"
@@ -29,6 +34,8 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1602491453631-e2a5ad90a131?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YW5pbWFsfGVufDB8MXwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
     <Card
       name="Pug"
@@ -37,6 +44,8 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YW5pbWFsfGVufDB8MXwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
     <Card
       name="Rabbit"
@@ -45,6 +54,8 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YW5pbWFsfGVufDB8MXwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
     <Card
       name="Gold Fish"
@@ -53,6 +64,8 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YW5pbWFsfGVufDB8MXwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
     <Card
       name="Eagle"
@@ -61,6 +74,8 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1611689342806-0863700ce1e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGFuaW1hbHxlbnwwfDF8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
     <Card
       name="Frog"
@@ -69,6 +84,8 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1579380656108-f98e4df8ea62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YW5pbWFsfGVufDB8MXwwfHx8Mg%3D%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
     <Card
       name="Meerkat"
@@ -77,6 +94,8 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1586959140255-aab0163e21cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGFuaW1hbHxlbnwwfDF8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
     <Card
       name="Iguana"
@@ -85,6 +104,8 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1610629651605-0b181ad69aab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFuaW1hbHxlbnwwfDF8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
     <Card
       name="Cat"
@@ -93,8 +114,28 @@ export default function Game() {
       score={score}
       setScore={setScore}
       src="https://images.unsplash.com/photo-1581300134629-4c3a06a31948?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGFuaW1hbHxlbnwwfDF8MHx8fDI%3D&auto=format&fit=crop&w=500&q=60"
+      isShuffle={isShuffle}
+      setShuffle={setShuffle}
     />,
   ]);
 
-  return <div className="game">{cards.map((e) => e)}</div>;
+  function shuffle() {
+    let out = cards;
+    let index = cards.length;
+    let randomIndex;
+    while (index != 0) {
+      randomIndex = Math.floor(Math.random() * index);
+      index--;
+      [out[index], out[randomIndex]] = [out[randomIndex], out[index]];
+    }
+    setCards(out);
+  }
+
+  return (
+    <div className="game">
+      <div>Score:{score}</div>
+      <div>Bestscore:{bestScore}</div>
+      {cards.map((e) => e)}
+    </div>
+  );
 }
