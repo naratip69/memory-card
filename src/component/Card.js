@@ -14,15 +14,20 @@ export default function Card(props) {
   const [isClick, setClick] = useState(false);
 
   onclick = (e) => {
-    setShuffle(!isShuffle);
+    e.stopPropagation();
+    e.preventDefault();
+    console.log(isClick);
+    console.log(name);
+    //setShuffle(true);
     if (!isClick) {
       console.log("update score");
       setClick(true);
       setScore(score + 1);
-    } else {
-      console.log("game over");
-      setGameOver(true);
+      return;
     }
+    console.log("game over");
+    setClick(false);
+    setGameOver(true);
   };
 
   return (

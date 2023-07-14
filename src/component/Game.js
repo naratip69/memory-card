@@ -5,7 +5,7 @@ export default function Game() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [isGameOver, setGameOver] = useState(false);
-  const [isShuffle, setShuffle] = useState(true);
+  const [isShuffle, setShuffle] = useState(false);
   const [cards, setCards] = useState([
     <Card
       name="Deer"
@@ -130,6 +130,18 @@ export default function Game() {
     }
     setCards(out);
   }
+
+  useEffect(() => {
+    if (isShuffle) {
+      shuffle();
+      setShuffle(false);
+    }
+    if (isGameOver) {
+      setBestScore(bestScore < score ? score : bestScore);
+      setScore(0);
+      setGameOver(false);
+    }
+  }, [score, bestScore, isGameOver, isShuffle]);
 
   return (
     <div className="game">
