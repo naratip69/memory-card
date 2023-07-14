@@ -9,9 +9,7 @@ const Card = (props) => {
     console.log(id);
     console.log(name);
     setShuffle(true);
-    if (!click[id]) {
-      console.log("update score");
-    } else {
+    if (click[id]) {
       console.log("game over");
       setGameOver();
     }
@@ -24,8 +22,8 @@ const Card = (props) => {
       onClick={onclick}
       style={{ width: "300px", height: "400px" }}
     >
-      <img src={src} style={{ width: "300px", height: "380px" }} />
-      <h5>{name}</h5>
+      <img src={src} style={{ width: "280px", height: "360px" }} />
+      <div>{name}</div>
     </div>
   );
 };

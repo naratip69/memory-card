@@ -142,17 +142,31 @@ export default function Game() {
   }
 
   useEffect(() => {
-    console.log("call");
-    if (isShuffle) {
-      shuffle();
-      setShuffle(false);
-      setScore(!isGameOver ? score + 1 : 0);
-    }
+    console.log(isGameOver);
     if (isGameOver) {
       console.log("gameover");
       setBestScore(bestScore < score ? score : bestScore);
       setScore(0);
       setGameOver(false);
+      let obj = {
+        1: false,
+        2: false,
+        3: false,
+        4: false,
+        5: false,
+        6: false,
+        7: false,
+        8: false,
+        9: false,
+        10: false,
+        11: false,
+      };
+      setClick(obj);
+    }
+    if (isShuffle) {
+      shuffle();
+      setShuffle(false);
+      if (!isGameOver) setScore(score + 1);
     }
   }, [score, isGameOver, isShuffle, click, bestScore]);
 
