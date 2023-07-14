@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-export default function Card(props) {
+const Card = (props) => {
+  const [isClick, setClick] = useState(false);
   const {
     name,
     src,
@@ -11,7 +12,6 @@ export default function Card(props) {
     isShuffle,
     setShuffle,
   } = props;
-  const [isClick, setClick] = useState(false);
 
   onclick = (e) => {
     e.stopPropagation();
@@ -24,10 +24,11 @@ export default function Card(props) {
       setClick(true);
       setScore(score + 1);
       return;
+    } else {
+      console.log("game over");
+      setClick(false);
+      setGameOver(true);
     }
-    console.log("game over");
-    setClick(false);
-    setGameOver(true);
   };
 
   return (
@@ -36,4 +37,6 @@ export default function Card(props) {
       <h5>{name}</h5>
     </div>
   );
-}
+};
+
+export default Card;
