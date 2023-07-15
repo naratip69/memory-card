@@ -12,6 +12,7 @@ const Card = (props) => {
     if (click[id]) {
       console.log("game over");
       setGameOver();
+      return;
     }
     setClick(id);
   };

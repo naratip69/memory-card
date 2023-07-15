@@ -142,26 +142,17 @@ export default function Game() {
   }
 
   useEffect(() => {
-    console.log(isGameOver);
+    // console.log(isGameOver);
     if (isGameOver) {
       console.log("gameover");
       setBestScore(bestScore < score ? score : bestScore);
       setScore(0);
-      setGameOver(false);
-      let obj = {
-        1: false,
-        2: false,
-        3: false,
-        4: false,
-        5: false,
-        6: false,
-        7: false,
-        8: false,
-        9: false,
-        10: false,
-        11: false,
-      };
+      let obj = click;
+      for (const key in obj) {
+        obj[key] = false;
+      }
       setClick(obj);
+      setGameOver(false);
     }
     if (isShuffle) {
       shuffle();
@@ -174,20 +165,22 @@ export default function Game() {
     <div className="game">
       <div>Score:{score}</div>
       <div>Bestscore:{bestScore}</div>
-      {cards.map((e) => {
-        return (
-          <Card
-            name={e["name"]}
-            setGameOver={e["setGameOver"]}
-            score={e["score"]}
-            src={e["src"]}
-            setShuffle={e["setShuffle"]}
-            click={e["click"]}
-            setClick={e["setClick"]}
-            id={e["id"]}
-          />
-        );
-      })}
+      <div className="cards">
+        {cards.map((e) => {
+          return (
+            <Card
+              name={e["name"]}
+              setGameOver={e["setGameOver"]}
+              score={e["score"]}
+              src={e["src"]}
+              setShuffle={e["setShuffle"]}
+              click={e["click"]}
+              setClick={e["setClick"]}
+              id={e["id"]}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
